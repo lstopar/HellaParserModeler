@@ -1,0 +1,284 @@
+
+levels 1-4
+
+
+"total scrap"
+
+"Plast-čas C[s]" 3 
+"Masa-blazin.[mm]" 3
+"Plast-hod C[mm]" 3
+"MaxMasaTl[bar]" 2
+"Potprekl Z[mm]" 4
+"Cilind.Z 6[°C]" 2
+"Temp105[°C]" 3
+"AgrNazčas C[s]" 3
+"TB-poz1NS zgoraj[mm]" 2
+"TB-poz3NS spodaj[mm]" 2
+"TB-poz2NS spodaj[mm]" 2
+"TB-poz2US spodaj[mm]" 2
+"TB-poz3US zgoraj[mm]" 2
+"TB-poz3NS zgoraj[mm]" 2
+"Max PoPotBriz[mm]" 2
+"TB-poz1US spodaj[mm]" 2
+"TB-poz2US zgoraj[mm]" 2
+"TB-poz2NS zgoraj[mm]" 2
+"TB-poz1NS spodaj[mm]" 2
+"TB-poz1US zgoraj[mm]" 2
+"TB-poz3US spodaj[mm]" 2
+"PovršHitBriz[mm/s*s]" 2
+"PovršPotBriz[mm*s]" 1
+"PovršMasaTl[bar*s]" 2
+
+—
+
+"141 zagon"
+
+"Plast-čas C[s]" 2 
+"Masa-blazin.[mm]" 2
+"Plast-hod C[mm]" 1
+"Potprekl Z[mm]" 2
+"Temp105[°C]" 2
+"OrOdpircas C[s]" 2
+"AgrNazčas C[s]" 3
+"TB-poz1NS zgoraj[mm]" 2
+"TB-poz3NS spodaj[mm]" 2
+"TB-poz2NS spodaj[mm]" 2
+"TB-poz2US spodaj[mm]" 2
+"TB-poz3US zgoraj[mm]" 2
+"TB-poz3NS zgoraj[mm]" 2
+"Max PoPotBriz[mm]" 2
+"TB-poz1US spodaj[mm]" 2
+"TB-poz2US zgoraj[mm]" 2
+"TB-poz2NS zgoraj[mm]" 2
+"TB-poz1NS spodaj[mm]" 2
+"TB-poz1US zgoraj[mm]" 2
+"TB-poz3US spodaj[mm]" 2
+"PovršHitBriz[mm/s*s]" 1
+"PovršPotBriz[mm*s]" 2
+"Max PoMasaTl[bar]" 1
+"PovršMasaTl[bar*s]" 1
+"total scrap" 1
+
+
+—
+
+"144 ponovni zagon (po čiščenju orodja)"
+
+"Plast-čas C[s]" 2
+"Masa-blazin.[mm]" 2
+"Plast-hod C[mm]" 2
+"MaxMasaTl[bar]" 1
+"Potprekl Z[mm]" 3
+"Cilind.Z 6[°C]" 1
+"OrOdpircas C[s]" 2
+"AgrNazčas C[s]" 4
+"TB-poz1NS zgoraj[mm]" 2
+"TB-poz3NS spodaj[mm]" 2
+"TB-poz2NS spodaj[mm]" 2
+"TB-poz2US spodaj[mm]" 2
+"TB-poz3US zgoraj[mm]" 2
+"TB-poz3NS zgoraj[mm]" 2
+"Max PoPotBriz[mm]" 1
+"TB-poz1US spodaj[mm]" 2
+"TB-poz2US zgoraj[mm]" 2
+"TB-poz2NS zgoraj[mm]" 2
+"TB-poz1NS spodaj[mm]" 2
+"TB-poz1US zgoraj[mm]" 2
+"TB-poz3US spodaj[mm]" 2
+"PovršHitBriz[mm/s*s]" 2
+"PovršPotBriz[mm*s]” 1
+"Max PoMasaTl[bar]" 1
+"PovršMasaTl[bar*s]" 2
+"total scrap" 2
+
+
+—
+
+"144 ponovni zagon (zaradi lakirnice)"
+
+"Plast-čas C[s]" 1
+"Masa-blazin.[mm]" 2
+"Plast-hod C[mm]" 1
+"MaxMasaTl[bar]" 1
+"Potprekl Z[mm]" 2
+"Cilind.Z 6[°C]" 1
+"Temp105[°C]" 2
+"ZS razgčas C[s]" 1
+"OrOdpircas C[s]" 2
+"AgrNazčas C[s]" 3
+"TB-poz1NS zgoraj[mm]" 2
+"TB-poz3NS spodaj[mm]" 2
+"TB-poz2NS spodaj[mm]" 2
+"TB-poz2US spodaj[mm]" 2
+"TB-poz3US zgoraj[mm]" 2
+"TB-poz3NS zgoraj[mm]" 2
+"Max PoPotBriz[mm]" 1
+"TB-poz1US spodaj[mm]" 2
+"TB-poz2US zgoraj[mm]" 2
+"TB-poz2NS zgoraj[mm]" 2
+"TB-poz1NS spodaj[mm]" 2
+"TB-poz1US zgoraj[mm]" 2
+"TB-poz3US spodaj[mm]" 2
+"PovršHitBriz[mm/s*s]" 2
+"PovršPotBriz[mm*s]" 1
+"Max PoMasaTl[bar]" 1
+"total scrap" 2
+
+
+—
+
+"1 nezalito, nedolito"
+
+"Plast-čas C[s]" 2
+"Masa-blazin.[mm]" 3
+"Plast-hod C[mm]" 1
+"MaxMasaTl[bar]" 1
+"Potprekl Z[mm]" 2
+"Temp105[°C]" 2
+"TB-poz1NS zgoraj[mm]" 2
+"TB-poz3NS spodaj[mm]" 2
+"TB-poz2NS spodaj[mm]" 2
+"TB-poz2US spodaj[mm]" 2
+"TB-poz3US zgoraj[mm]" 2
+"TB-poz3NS zgoraj[mm]" 2
+"Max PoPotBriz[mm]" 1
+"TB-poz1US spodaj[mm]" 2
+"TB-poz2US zgoraj[mm]" 2
+"TB-poz2NS zgoraj[mm]" 2
+"TB-poz1NS spodaj[mm]" 2
+"TB-poz1US zgoraj[mm]" 2
+"TB-poz3US spodaj[mm]" 2
+"PovršHitBriz[mm/s*s]" 1
+"PovršPotBriz[mm*s]" 1
+"total scrap" 2
+
+—
+
+"2 posedeno"
+
+"Plast-čas C[s]" 1
+"Masa-blazin.[mm]" 2
+"Plast-hod C[mm]" 1
+"MaxMasaTl[bar]" 1
+"Potprekl Z[mm]" 2
+"Cilind.Z 6[°C]" 1
+"Temp105[°C]" 2
+"Temp105[°C]" 1
+"ZS razgčas C[s]" 1
+"OrOdpircas C[s]" 2
+"AgrNazčas C[s]" 3
+"TB-poz1NS zgoraj[mm]" 2
+"TB-poz3NS spodaj[mm]" 2
+"TB-poz2NS spodaj[mm]" 2
+"TB-poz2US spodaj[mm]" 2
+"TB-poz3US zgoraj[mm]" 2
+"TB-poz3NS zgoraj[mm]" 2
+"TB-poz1US spodaj[mm]" 2
+"TB-poz2US zgoraj[mm]" 2
+"TB-poz2NS zgoraj[mm]" 2
+"TB-poz1NS spodaj[mm]" 2
+"TB-poz1US zgoraj[mm]" 2
+"TB-poz3US spodaj[mm]" 2
+"PovršHitBriz[mm/s*s]" 1
+"PovršPotBriz[mm*s]" 1
+"Max PoMasaTl[bar]" 1
+"total scrap" 2
+
+—
+
+"3 prelito"
+
+"Plast-čas C[s]" 1
+"Masa-blazin.[mm]" 2
+"Plast-hod C[mm]" 1
+"MaxMasaTl[bar]" 1
+"Potprekl Z[mm]" 2
+"Temp105[°C]" 1
+"ZS razgčas C[s]" 1
+"OrOdpircas C[s]" 2
+"AgrNazčas C[s]" 3
+"Čas hlajenja Z[s]" 1
+"TB-poz1NS zgoraj[mm]" 2
+"TB-poz3NS spodaj[mm]" 2
+"TB-poz2NS spodaj[mm]" 2
+"TB-poz2US spodaj[mm]" 2
+"TB-poz3US zgoraj[mm]" 2
+"TB-poz3NS zgoraj[mm]" 2
+"Max PoPotBriz[mm]" 1
+"TB-poz1US spodaj[mm]" 2
+"TB-poz2US zgoraj[mm]" 2
+"TB-poz2NS zgoraj[mm]" 2
+"TB-poz1NS spodaj[mm]" 2
+"TB-poz1US zgoraj[mm]" 2
+"TB-poz3US spodaj[mm]" 2
+"PovršHitBriz[mm/s*s]" 1
+"PovršPotBriz[mm*s]" 1
+"Max PoMasaTl[bar]" 1
+"PovršMasaTl[bar*s]" 2
+"PovršOrTl[bar*s]" 1
+"total scrap" 2
+
+—
+
+"4 počeno, zvito, deformirano"
+
+"Plast-čas C[s]" 1
+"Masa-blazin.[mm]" 2
+"Plast-hod C[mm]" 1
+"MaxMasaTl[bar]" 1
+"Potprekl Z[mm]" 2
+"Temp105[°C]" 1
+"ZS razgčas C[s]" 1
+"OrOdpircas C[s]" 2
+"AgrNazčas C[s]" 3
+"Čas hlajenja Z[s]" 1
+"TB-poz1NS zgoraj[mm]" 2
+"TB-poz3NS spodaj[mm]" 2
+"TB-poz2NS spodaj[mm]" 2
+"TB-poz2US spodaj[mm]" 2
+"TB-poz3US zgoraj[mm]" 2
+"TB-poz3NS zgoraj[mm]" 2
+"TB-poz1US spodaj[mm]" 2
+"TB-poz2US zgoraj[mm]" 2
+"TB-poz2NS zgoraj[mm]" 2
+"TB-poz1NS spodaj[mm]" 2
+"TB-poz1US zgoraj[mm]" 2
+"TB-poz3US spodaj[mm]" 2
+"PovršHitBriz[mm/s*s]" 1
+"PovršPotBriz[mm*s]" 1
+"Max PoMasaTl[bar]" 1
+"PovršinaKrivRez 5[bar]" 1
+"PovršMasaTl[bar*s]" 2
+"total scrap" 2
+
+—
+
+"5 opraskano (robot, trak)"
+
+"Plast-čas C[s]" 1
+"Masa-blazin.[mm]" 2
+"Plast-hod C[mm]" 1
+"MaxMasaTl[bar]" 1
+"Potprekl Z[mm]" 2
+"Temp105[°C]" 1
+"ZS razgčas C[s]" 1
+"OrOdpircas C[s]" 2
+"AgrNazčas C[s]" 3
+"Čas hlajenja Z[s]" 1
+"TB-poz1NS zgoraj[mm]" 2
+"TB-poz3NS spodaj[mm]" 2
+"TB-poz2NS spodaj[mm]" 2
+"TB-poz2US spodaj[mm]" 2
+"TB-poz3US zgoraj[mm]" 2
+"TB-poz3NS zgoraj[mm]" 2
+"Max PoPotBriz[mm]" 1
+"TB-poz1US spodaj[mm]" 2
+"TB-poz2US zgoraj[mm]" 2
+"TB-poz2NS zgoraj[mm]" 2
+"TB-poz1NS spodaj[mm]" 2
+"TB-poz1US zgoraj[mm]" 2
+"TB-poz3US spodaj[mm]" 2
+"PovršHitBriz[mm/s*s]" 1
+"PovršPotBriz[mm*s]" 1
+"Max PoMasaTl[bar]" 1
+"total scrap" 2

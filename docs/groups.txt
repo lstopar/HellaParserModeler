@@ -1,0 +1,26 @@
+[141,14,15]
+[144,23,1]
+[5,7,23,6]
+[4,428]
+[172]
+[9]
+
+-141: (zagon)	-	-14: (pike)		 sim: 0.6176470588235294
+-144: (ponovni zagon)	-	-23: (nitke)		 sim: 0.6470588235294118
+-5: (opraskano)	-	-7 (zarki):		 sim: 0.84375
+-4: (počeno, zvito, deformirano)	-	-428: (crne pike)		 sim: 0.7619047619047619
+-5: (opraskano)	-	-23: (nitke)		 sim: 0.4418604651162791
+-1: (nezalito, nedolito)	-	-23: (nitke)		 sim: 0.6470588235294118
+-23: (nitke)	-	-7 (zarki):		 sim: 0.4878048780487805
+
+
+-5: (opraskano)	-	-6: (tujki)		 sim: 0.35714285714285715
+-6: (tujki)	-	-7 (zarki):		 sim: 0.36363636363636365
+
+-15: (meglica)	-	-14: (pike)		 sim: 0.38461538461538464
+
+
+-144: (ponovni zagon)	-	-7 (zarki):		 sim: 0.358974358974359
+-1: (nezalito, nedolito)	-	-5: (opraskano)		 sim: 0.38461538461538464
+-1: (nezalito, nedolito)	-	-7 (zarki):		 sim: 0.358974358974359
+-1: (nezalito, nedolito)	-	-7 (zarki):		 sim: 0.358974358974359

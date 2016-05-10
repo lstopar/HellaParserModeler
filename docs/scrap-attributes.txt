@@ -1,178 +1,403 @@
-these do not appear
-183 /
-182 /
-12
-180
+-141: (zagon)
+"PreklMasaTlZ[bar]"		low
+"MaxMasaTl[bar]"		low
+"OljeZ14[°C]"			high
+"Cilind.Z 1[°C]"		high
+"Cilind.Z 2[°C]"		high
+"Cilind.Z 3[°C]"		high
+"Cilind.Z 4[°C]"		low
+"Temp104[°C]"			lowest
+"Temp106[°C]"			low
+"Oro-grZ 1[°C]"			lowest
+"Temp103[°C]"			lowest
+"ZS vzpčas C[s]"		lowest
+"AgrNazčas C[s]"		lowest
+"Or Zapcas C[s]"		lowest
+"NaknTlčas C[s]"		highest
+"TB-poz1NS zgoraj[mm]"		lowest
+"TB-poz3NS spodaj[mm]"		lowest
+"TB-poz2NS spodaj[mm]"		lowest
+"TB-poz2US spodaj[mm]"		lowest
+"TB-poz3US zgoraj[mm]"		lowest
+"TB-poz3NS zgoraj[mm]"		lowest
+"TB-poz1US spodaj[mm]"		lowest
+"TB-poz2US zgoraj[mm]"		lowest
+"TB-poz2NS zgoraj[mm]"		lowest
+"TB-poz1NS spodaj[mm]"		lowest
+"TB-poz1US zgoraj[mm]"		lowest
+"TB-poz3US spodaj[mm]"		lowest
+"Max PoHitBriz[mm/s]"		low
+"Max PoMasaTl[bar]"		low
+"PovršMasaTl[bar*s]"		low
 
-6:	pojavi se 1x (se malo drugje)
-Brizg-čas C[s]: high
-Plast-čas C[s]: high
-Plast-hod C[mm]: high
-PrirobnZ15[°C]: high
-PreklMasaTlZ[bar]: high
-MaxMasaTl[bar]: high
-Cilind.Z 11[°C]: high
-Cilind.Z 1[°C]: high
-Cilind.Z 2[°C]: high
-Cilind.Z 2[°C]: low
-Cilind.Z 3[°C]: high
-Cilind.Z 4[°C]: high
-Cilind.Z 6[°C]: high
-Temp101[°C]: high
-Oro-grZ 1[°C]: high
-Temp103[°C]: low
-Cilind.Z 5[°C]: high
-Temp101[°C]: low
-Temp102[°C]: high
-Temp102[°C]: low
-Temp105[°C]: low
-Temp106[°C]: low
-Oro-grZ 2[°C]: high
-OrOdpircas C[s]: high
-Or Zapcas C[s: high
-ZS razgčas C[s]: relatively high
-ZapahIzčas C[s]: high
-Časpavze Z[s]: low
-Čas hlajenja Z[s]: low
-Or Zapcas C[s]: low
-TB-poz1NS zgoraj[mm]: high
-TB-poz3NS spodaj[mm]: high
-TB-poz2NS spodaj[mm]: high
-TB-poz2US spodaj[mm]: high
-TB-poz3US zgoraj[mm]: high
-TB-poz3NS zgoraj[mm]: high
-Max PoPotBriz[mm]: high
-Max PoMasaTl[bar]: high
-TB-poz1US spodaj[mm]: high
-TB-poz2US zgoraj[mm]: high
-TB-poz2NS zgoraj[mm]: high
-TB-poz1NS spodaj[mm]: high
-TB-poz1US zgoraj[mm]: high
-TB-poz3US spodaj[mm]: high
-PovršPotBriz[mm*s]: high
-PovršMasaTl[bar*s]: high
+==================================
 
+-144: (ponovni zagon)
 
+"Brizg-čas C[s]"		high
+"Plast-čas C[s]"		high
+"Plast-hod C[mm]"		high
+"MaxMasaTl[bar]"		low
+"Potprekl Z[mm]"		high
+"OljeZ14[°C]"			low
+"Temp101[°C]"			high
+"Temp103[°C]"			lowest
+"Temp102[°C]"			high
+"Or Zapcas C[s]"		high
+"TB-poz1NS zgoraj[mm]"		high
+"TB-poz3NS spodaj[mm]"		high
+"TB-poz2NS spodaj[mm]"		high
+"TB-poz2US spodaj[mm]"		high
+"TB-poz3US zgoraj[mm]"		high
+"TB-poz3NS zgoraj[mm]"		high
+"TB-poz1US spodaj[mm]"		high
+"TB-poz2US zgoraj[mm]"		high
+"TB-poz2NS zgoraj[mm]"		high
+"TB-poz1NS spodaj[mm]"		high
+"TB-poz1US zgoraj[mm]"		high
+"TB-poz3US spodaj[mm]"		high
+"PovršPotBriz[mm*s]"		high
+"Max PoMasaTl[bar]"		low
 
+==================================
 
+-1: (nezalito, nedolito)
+"Brizg-čas C[s]"		high
+"Plast-čas C[s]"		high
+"Plast-hod C[mm]"		high
+"MaxMasaTl[bar]"		low
+"Potprekl Z[mm]"		high
+"OljeZ14[°C]"			low
+"Temp101[°C]"			high
+"Temp103[°C]"			lowest
+"Temp102[°C]"			high
+"Or Zapcas C[s]"		high
+"TB-poz1NS zgoraj[mm]"		high
+"TB-poz3NS spodaj[mm]"		high
+"TB-poz2NS spodaj[mm]"		high
+"TB-poz2US spodaj[mm]"		high
+"TB-poz3US zgoraj[mm]"		high
+"TB-poz3NS zgoraj[mm]"		high
+"TB-poz1US spodaj[mm]"		high
+"TB-poz2US zgoraj[mm]"		high
+"TB-poz2NS zgoraj[mm]"		high
+"TB-poz1NS spodaj[mm]"		high
+"TB-poz1US zgoraj[mm]"		high
+"TB-poz3US spodaj[mm]"		high
+"PovršPotBriz[mm*s]"		high
+"Max PoMasaTl[bar]"		low
 
-428,172:	appears multiple times
-Cilind.Z 2[°C]: relatively high
-Cilind.Z 3[°C]: relatively high
-Cilind.Z 4[°C]: relatively high
-Cilind.Z 5[°C]: relatively high
-Oro-grZ 3[°C]: relatively low
-Oro-grZ 2[°C]: relatively high
+==================================
 
+-4: (počeno, zvito, deformirano)
+"Brizg-čas C[s]"		low
+"Plast-čas C[s]"		low
+"Plast-hod C[mm]"		low
+"PrirobnZ15[°C]"		high
+"Cilind.Z 1[°C]"		highest
+"Cilind.Z 2[°C]"		highest
+"Cilind.Z 3[°C]"		highest
+"Cilind.Z 4[°C]"		highest
+"Cilind.Z 5[°C]"		highest
+"Cilind.Z 6[°C]"		low
+"Temp106[°C]"			low
+"ZS vzpčas C[s]"		low
+"Časpavze Z[s]"			low
+"NaknTlčas C[s]"		low
+"TB-poz1NS zgoraj[mm]"		low
+"TB-poz1US spodaj[mm]"		low
+"TB-poz1NS spodaj[mm]"		low
+"TB-poz1US zgoraj[mm]"		low
+"Max PoPotBriz[mm]"		low
+"PovršPotBriz[mm*s]"		low
+"PovršMasaTl[bar*s]"		low
 
-23:	pojavi se velikokrat
-Brizg-čas C[s]: high
-Plast-čas C[s]: high
-Plast-hod C[mm]: high
-PrirobnZ15[°C]: high
-Cilind.Z 11[°C]: high
-Cilind.Z 1[°C]: high
-Cilind.Z 2[°C]: high
-Cilind.Z 3[°C]: high
-Cilind.Z 4[°C]: high
-Cilind.Z 6[°C]: high
-Temp101[°C]: high
-Oro-grZ 1[°C]: relatively high
-Temp103[°C]: low
-Cilind.Z 5[°C]: high
-Temp102[°C]: high
-Oro-grZ 3[°C]: low
-Oro-grZ 2[°C]: relatively high
-ZS razgčas C[s]: relatively high
-ZapahIzčas C[s]: high
-Časpavze Z[s]: low
-Or Zapcas C[s]: low
-TB-poz1NS zgoraj[mm]: high
-TB-poz3NS spodaj[mm]: high
-TB-poz2NS spodaj[mm]: high
-TB-poz2US spodaj[mm]: high
-TB-poz3US zgoraj[mm]: high
-TB-poz3NS zgoraj[mm]: high
-Max PoPotBriz[mm]: high
-TB-poz1US spodaj[mm]: high
-TB-poz2US zgoraj[mm]: high
-TB-poz2NS zgoraj[mm]: high
-TB-poz1NS spodaj[mm]: high
-TB-poz1US zgoraj[mm]: high
-TB-poz3US spodaj[mm]: high
-PovršPotBriz[mm*s]: high
+===================================
 
-15:	pojavi se 3x
-Masa-blazin.[mm]: low
-Potprekl Z[mm]: low
-PrirobnZ15[°C]: relatively high
-Temp104[°C]: high
-Temp106[°C]: high
-Temp101[°C]: relatively high
-Temp103[°C]: relatively low
-Temp105[°C]: high
-Temp102[°C]: relatively high
-Oro-grZ 3[°C]: high
-Oro-grZ 2[°C]: low
-ZapahIzčas C[s]: high
-TB-poz1NS zgoraj[mm]: relatively high
-TB-poz3NS spodaj[mm]: relatively high
-TB-poz2NS spodaj[mm]: relatively high
-TB-poz2US spodaj[mm]: relatively high
-TB-poz3US zgoraj[mm]: realtively high
-TB-poz3NS zgoraj[mm]: relatively high
-TB-poz1US spodaj[mm]: relatively high
-TB-poz2US zgoraj[mm]: realtively high
-TB-poz2NS zgoraj[mm]: relatively high
-TB-poz1NS spodaj[mm]: relatively high
-TB-poz1US zgoraj[mm]: relatively high
-TB-poz3US spodaj[mm]: relatively high
+-5: (opraskano)
+"Masa-blazin.[mm]"		lowest
+"OljeZ14[°C]"			low
+"Cilind.Z 1[°C]"		highest
+"Cilind.Z 2[°C]"		highest
+"Cilind.Z 2[°C]"		highest
+"Cilind.Z 3[°C]"		highest
+"Cilind.Z 4[°C]"		highest
+"Cilind.Z 5[°C]"		highest
+"Cilind.Z 6[°C]"		low
+"OljeZ14[°C]"			low
+"Temp101[°C]"			highest
+"Temp102[°C]"			highest
+"Temp104[°C]"			highest
+"Temp106[°C]"			high
+"Temp105[°C]"			highest
+"ZS razgčas C[s]"		highest
+"Čas hlajenja Z[s]"		high
+"TB-poz1NS zgoraj[mm]"		high
+"TB-poz3NS spodaj[mm]"		high
+"TB-poz2NS spodaj[mm]"		high
+"TB-poz2US spodaj[mm]"		high
+"TB-poz3US zgoraj[mm]"		high
+"TB-poz3NS zgoraj[mm]"		high
+"TB-poz1US spodaj[mm]"		high
+"TB-poz2US zgoraj[mm]"		high
+"TB-poz2NS zgoraj[mm]"		high
+"TB-poz1NS spodaj[mm]"		high
+"TB-poz1US zgoraj[mm]"		high
+"TB-poz3US spodaj[mm]"		high
+"Max PoHitBriz[mm/s]"		lowest
+"PovršHitBriz[mm/s*s]"		lowest
+"PovršMasaTl[bar*s]"		lowest
 
-14:	(pojavi se samo enkrat)
-PreklMasaTlZ[bar]: relatively low
-MaxMasaTl[bar]: relatively low
-OljeZ14[°C]: high
-PrirobnZ15[°C]: high
-Cilind.Z 1[°C]: high
-Cilind.Z 2[°C]: high
-Cilind.Z 3[°C]: high
-Temp104[°C]: low
-Temp103[°C]: low
-Oro-grZ 3[°C]: low
-AgrNazčas C[s]: low
-ZapahIzčas C[s]: high
-NaknTlčas C[s]" high
-TB-poz1NS zgoraj[mm]: low
-TB-poz3NS spodaj[mm]: low
-TB-poz2NS spodaj[mm]: low
-TB-poz2US spodaj[mm]: low
-TB-poz3US zgoraj[mm]: low
-TB-poz3NS zgoraj[mm]: low
-TB-poz1US spodaj[mm]: low
-TB-poz2US zgoraj[mm]: low
-TB-poz2NS zgoraj[mm]: low
-TB-poz1NS spodaj[mm]: low
-TB-poz1US zgoraj[mm]: low
-TB-poz3US spodaj[mm]: low
+==================================
 
-9:	pojavi se 2x
-Brizg-čas C[s]: low
-Plast-hod C[mm]: relatively high
-PreklMasaTlZ[bar]: relatively high
-MaxMasaTl[bar]: relatively high
-Oro-grZ 1[°C]: relatively high
-Temp105[°C]: relatively low
-Temp102[°C]: relatively low
-Oro-grZ 3[°C]: low
-ZS razgčas C[s]: relatively high
-OrOdpircas C[s]: high
-AgrNazčas C[s]: low
-Or Zapcas C[s]: high
-NaknTlčas C[s]: high
-Max PoHitBriz[mm/s]: high
-PovršHitBriz[mm/s*s]: high
-PovršMasaTl[bar*s]: relatively high
+-6: (tujki)
+"Brizg-čas C[s]"		highest
+"Plast-čas C[s]"		highest
+"Plast-hod C[mm]"		highest
+"PrirobnZ15[°C]"		highest
+"PreklMasaTlZ[bar]"		highest
+"MaxMasaTl[bar]"		highest
+"Cilind.Z 11[°C]"		highest
+"Cilind.Z 1[°C]"		highest
+"Cilind.Z 2[°C]"		highest
+"Cilind.Z 2[°C]"		lowest
+"Cilind.Z 3[°C]"		highest
+"Cilind.Z 4[°C]"		highest
+"Cilind.Z 6[°C]"		highest
+"Temp101[°C]"			highest
+"Oro-grZ 1[°C]"			highest
+"Temp103[°C]"			lowest
+"Cilind.Z 5[°C]"		highest
+"Temp101[°C]"			lowest
+"Temp102[°C]"			highest
+"Temp102[°C]"			lowest
+"Temp105[°C]"			lowest
+"Temp106[°C]"			lowest
+"Oro-grZ 2[°C]"			highest
+"OrOdpircas C[s]"		highest
+"Or Zapcas C[s]"		highest
+"ZS razgčas C[s]"		high
+"ZapahIzčas C[s]"		highest
+"Časpavze Z[s]"			lowest
+"Čas hlajenja Z[s]"		lowest
+"Or Zapcas C[s]"		lowest
+"TB-poz1NS zgoraj[mm]"		highest
+"TB-poz3NS spodaj[mm]"		highest
+"TB-poz2NS spodaj[mm]"		highest
+"TB-poz2US spodaj[mm]"		highest
+"TB-poz3US zgoraj[mm]"		highest
+"TB-poz3NS zgoraj[mm]"		highest
+"TB-poz1US spodaj[mm]"		highest
+"TB-poz2US zgoraj[mm]"		highest
+"TB-poz2NS zgoraj[mm]"		highest
+"TB-poz1NS spodaj[mm]"		highest
+"TB-poz1US zgoraj[mm]"		highest
+"TB-poz3US spodaj[mm]"		highest
+"Max PoPotBriz[mm]"		highest
+"Max PoMasaTl[bar]"		highest
+"PovršPotBriz[mm*s]"		highest
+"PovršMasaTl[bar*s]"		highest
 
-7 same as 23:	pojavi se 1x
+==================================
 
+-172: (U - zanka)
+"PreklMasaTlZ[bar]"		lowest
+"MaxMasaTl[bar]"		lowest
+"PrirobnZ15[°C]"		highest
+"Cilind.Z 1[°C]"		high
+"Cilind.Z 2[°C]"		high
+"Cilind.Z 3[°C]"		high
+"Cilind.Z 4[°C]"		high
+"Cilind.Z 5[°C]"		high
+"Cilind.Z 6[°C]"		low
+"Temp101[°C]"			lowest
+"Temp103[°C]"			highest
+"Temp102[°C]"			lowest
+"ZS razgčas C[s]"		highest
+"ZS vzpčas C[s]"		highest
+"Čas hlajenja Z[s]"		highest
+"NaknTlčas C[s]"		highest
+"Max PoMasaTl[bar]"		low
+"Maks FKrivRez 5[bar]"		high
+"OrOdpircas C[s]"		low
+
+==================================
+
+-428: (crne pike)
+"Plast-čas C[s]"		lowest
+"Plast-hod C[mm]"		lowest
+"PrirobnZ15[°C]"		highest
+"PovršPotBriz[mm*s]"		lowest
+"Cilind.Z 1[°C]"		high
+"Cilind.Z 2[°C]"		high
+"Cilind.Z 3[°C]"		high
+"Cilind.Z 4[°C]"		high
+"Cilind.Z 5[°C]"		high
+"Cilind.Z 6[°C]"		low
+"ZS vzpčas C[s]"		low
+"Časpavze Z[s]"			low
+"NaknTlčas C[s]"		low
+"Max PoPotBriz[mm]"		lowest
+"TB-poz1NS spodaj[mm]"		lowest
+"PovršPotBriz[mm*s]"		lowest
+"PovršMasaTl[bar*s]"		low
+
+==================================
+
+-23: (nitke)
+"Brizg-čas C[s]"		highest
+"Plast-čas C[s]"		highest
+"Plast-hod C[mm]"		highest
+"PreklMasaTlZ[bar]"		low
+"MaxMasaTl[bar]"		low
+"Potprekl Z[mm]"		high
+"OljeZ14[°C]"			low
+"PrirobnZ15[°C]"		high
+"Cilind.Z 11[°C]"		high
+"Cilind.Z 1[°C]"		highest
+"Cilind.Z 2[°C]"		highest
+"Cilind.Z 3[°C]"		highest
+"Cilind.Z 4[°C]"		highest
+"Cilind.Z 5[°C]"		highest
+"Cilind.Z 6[°C]"		highest
+"Temp101[°C]"			highest
+"Temp102[°C]"			highest
+"Temp103[°C]"			lowest
+"Časpavze Z[s]"			low
+"Or Zapcas C[s]"		highest
+"TB-poz1NS zgoraj[mm]"		highest
+"TB-poz2NS spodaj[mm]"		highest
+"TB-poz2US spodaj[mm]"		highest
+"TB-poz3US zgoraj[mm]"		highest
+"TB-poz3NS zgoraj[mm]"		highest
+"TB-poz1US spodaj[mm]"		highest
+"TB-poz2US zgoraj[mm]"		highest
+"TB-poz2NS zgoraj[mm]"		highest
+"TB-poz1NS spodaj[mm]"		highest
+"TB-poz1US zgoraj[mm]"		highest
+"TB-poz3US spodaj[mm]"		highest
+"PovršPotBriz[mm*s]"		highest
+
+==================================
+
+-15: (meglica)
+"Masa-blazin.[mm]"		high
+"Plast-hod C[mm]"		highest
+"Potprekl Z[mm]"		highest
+"Cilind.Z 1[°C]"		highest
+"Cilind.Z 2[°C]"		highest
+"Cilind.Z 3[°C]"		highest
+"Cilind.Z 4[°C]"		highest
+"Cilind.Z 5[°C]"		highest
+"Cilind.Z 6[°C]"		highest
+"Temp101[°C]"			highest
+"Temp102[°C]"			highest
+"ZS razgčas C[s]"		highest
+"ZS vzpčas C[s]"		high
+"TB-poz1NS zgoraj[mm]"		lowest
+"TB-poz3NS spodaj[mm]"		lowest
+"TB-poz2NS spodaj[mm]"		lowest
+"TB-poz2US spodaj[mm]"		lowest
+"TB-poz3US zgoraj[mm]"		lowest
+"TB-poz3NS zgoraj[mm]"		lowest
+"TB-poz1US spodaj[mm]"		lowest
+"TB-poz2US zgoraj[mm]"		lowest
+"TB-poz2NS zgoraj[mm]"		lowest
+"TB-poz1NS spodaj[mm]"		lowest
+"TB-poz1US zgoraj[mm]"		lowest
+"TB-poz3US spodaj[mm]"		lowest
+"Max PoPotBriz[mm]"		highest
+"Max PoHitBriz[mm/s]"		highest
+"PovršPotBriz[mm*s]"		highest
+"PovršMasaTl[bar*s]"		highest
+
+==================================
+
+-14: (pike)
+"PreklMasaTlZ[bar]"		low
+"MaxMasaTl[bar]"		low
+"OljeZ14[°C]"			highest
+"PrirobnZ15[°C]"		highest
+"Cilind.Z 1[°C]"		highest
+"Cilind.Z 2[°C]"		highest
+"Cilind.Z 3[°C]"		highest
+"Temp104[°C]"			lowest
+"Temp103[°C]"			lowest
+"Oro-grZ 3[°C]"			lowest
+"AgrNazčas C[s]"		lowest
+"ZapahIzčas C[s]"		highest
+"NaknTlčas C[s]" 		highest
+"TB-poz1NS zgoraj[mm]"		lowest
+"TB-poz3NS spodaj[mm]"		lowest
+"TB-poz2NS spodaj[mm]"		lowest
+"TB-poz2US spodaj[mm]"		lowest
+"TB-poz3US zgoraj[mm]"		lowest
+"TB-poz3NS zgoraj[mm]"		lowest
+"TB-poz1US spodaj[mm]"		lowest
+"TB-poz2US zgoraj[mm]"		lowest
+"TB-poz2NS zgoraj[mm]"		lowest
+"TB-poz1NS spodaj[mm]"		lowest
+"TB-poz1US zgoraj[mm]"		lowest
+"TB-poz3US spodaj[mm]"		lowest
+
+==================================
+
+-9: (enojni zarek)
+"PreklMasaTlZ[bar]"		highest
+"MaxMasaTl[bar]"		highest
+"OljeZ14[°C]"			lowest
+"Cilind.Z 1[°C]"		lowest
+"Cilind.Z 2[°C]"		lowest
+"Cilind.Z 3[°C]"		lowest
+"Cilind.Z 4[°C]"		lowest
+"Cilind.Z 5[°C]"		lowest
+"Cilind.Z 6[°C]"		lowest
+"Temp104[°C]"			low
+"Temp106[°C]"			lowest
+"Temp101[°C]"			lowest
+"Temp102[°C]"			lowest
+"Temp105[°C]"			lowest
+"ZS razgčas C[s]"		lowest
+"OrOdpircas C[s]"		highest
+"ZS vzpčas C[s]"		high
+"AgrNazčas C[s]"		low
+"Čas hlajenja Z[s]"		lowest
+"Or Zapcas C[s]"		highest
+"Max PoHitBriz[mm/s]"		highest
+"PovršHitBriz[mm/s*s]"		high
+"Max PoMasaTl[bar]"		highest
+"PovršMasaTl[bar*s]"		highest
+
+==================================
+
+-7 (zarki):
+"Masa-blazin.[mm]"		low
+"OljeZ14[°C]"			lowest
+"Cilind.Z 1[°C]"		highest
+"Cilind.Z 2[°C]"		highest
+"Cilind.Z 3[°C]"		highest
+"Cilind.Z 4[°C]"		highest
+"Cilind.Z 5[°C]"		highest
+"Temp104[°C]"			highest
+"Temp106[°C]"			highest
+"Temp101[°C]"			highest
+"Temp103[°C]"			high
+"Temp102[°C]"			highest
+"ZS razgčas C[s]"		highest
+"Časpavze Z[s]"			low
+"TB-poz1NS zgoraj[mm]"		high
+"TB-poz2NS spodaj[mm]"		high
+"TB-poz2US spodaj[mm]"		high
+"TB-poz3US zgoraj[mm]"		high
+"TB-poz3NS zgoraj[mm]"		high
+"TB-poz1US spodaj[mm]"		high
+"TB-poz2US zgoraj[mm]"		high
+"TB-poz2NS zgoraj[mm]"		high
+"TB-poz1NS spodaj[mm]"		high
+"TB-poz1US zgoraj[mm]"		high
+"TB-poz3US spodaj[mm]"		high
+"Max PoHitBriz[mm/s]"		lowest
+"PovršHitBriz[mm/s*s]"		lowest
+"PovršMasaTl[bar*s]"		lowest
+"Temp105[°C]"			high
 
