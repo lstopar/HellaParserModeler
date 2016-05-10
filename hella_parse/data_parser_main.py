@@ -58,18 +58,6 @@ def parse(machine = "61282649"):
         pin = open(scrap_fname, 'rb')
         scrap_reports = pickle.load(pin)
         pin.close()
-        
-#         new_scrap_reports = {}
-#         for date_str in scrap_reports:
-#             tup = date_str.split('.')
-#             new_key = datetime.datetime(int(tup[2]), int(tup[1]), int(tup[0])).strftime('%d.%m.%Y')
-#             new_scrap_reports[new_key] = scrap_reports[date_str]
-#         
-#         pout = open(dir_name + 'scrap_reports-fixdates.p', 'wb')
-#         pickle.dump(new_scrap_reports, pout)
-#         pout.flush()
-#         pout.close()
-#         exit()
     else:
         scrap_reports = parseCsvFiles(showMissing=True, path=scrap_path)
         pout = open(scrap_fname, 'wb')
@@ -231,8 +219,12 @@ def parse(machine = "61282649"):
             result.append(out_row)
         fin.close()
         
+    print('Removing duplicates ...')
+    timestamp_col = 3
+    timestamp_h = { row[timestamp_col]: row for row in result }
+    result = [timestamp_h[key] for key in timestamp_h]
     print('Sorting ...')
-    result.sort(key = lambda row: row[3])
+    result.sort(key = lambda row: row[timestamp_col])
         
     print('Writing to output file ...')
     fout = open(fout_name, 'w')
