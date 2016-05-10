@@ -1,0 +1,33 @@
+429 pike (dots): 
+233773 nakpak v podatkih (50% veè, kot naslednji)
+podvzoèitelji: 
+prah (dust on the floor shop)
+
+dobim še podatke o prahu v okolici
+
+združi z (potencialno):
+ - 6 onesnaženo s tujki (raje ne?)
+ - 14 pike, pikasto (razno)
+ - mikro prah
+ - 428 èrna(e) pika(e)
+ - 428 èrne pike 
+
+
+7 žarki, plastika (welding line????, hairs????):
+151860 napak v podatkih
+povzroèitelji:
+1)
+injection speed
+Temperature of the mold
+mold damage
+material temperature
+2)
+cooling time
+material temperature
+decompression time
+
+
+
+združi z:
+ - 9 enojni žarek
+ - 23 nitke
