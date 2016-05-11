@@ -43,3 +43,17 @@ heatmap(HellaCovariance2)
 dev.off()
 write.table(HellaCovariance, file="HellaCovariance.txt", row.names=FALSE, col.names=FALSE)
 
+
+## Variance
+
+Hellavarmat <- cov(Hella[,c(5:142)])
+Hellavarmat[is.na(Hellavarmat)]<-0
+View(Hellavarmat)
+HellaVariance<-Hellavarmat[c(23:138),c(2:22)]
+HellaVariance2<-HellaVariance[c(1:12,90:98,105:116),]
+heatmap(HellaVariance2)
+png(file="HellaVariance.png")
+heatmap(HellaVariance2)
+dev.off()
+write.table(HellaVariance, file="HellaVariance.txt", row.names=FALSE, col.names=FALSE)
+
