@@ -76,3 +76,5 @@ target/
 # eclipse
 .project
 .pydevproject
+
+hella_correlate/hella_joao/

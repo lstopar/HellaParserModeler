@@ -3,6 +3,8 @@
 
 ## Correlation
 
+## pearson (default) correlation coefficient
+
 Hella <- read.csv("Hella-molding-V2.csv", na.strings="0")
 View(Hella)
 Hella[is.na(Hella)]<-0
@@ -23,6 +25,30 @@ heatmap(HellaCorrelate2)
 dev.off()
 write.table(HellaCorrelate, file="HellaCorrelate.txt", row.names=FALSE, col.names=FALSE)
 write.table(HellaCorrelate2, file="HellaCorrelate2.txt", row.names=FALSE, col.names=FALSE)
+
+## spearman correlation coefficient
+
+Hellacorrsp <- cor(Hella[,c(5:142)], method = "spearman")
+Hellacorrsp[is.na(Hellacorrsp)]<-0
+HellaCorrelateSp <- Hellacorrsp[c(23:138),c(2:22)]
+HellaCorrelateSp2=HellaCorrelateSp[c(1:12,90:98,105:116),]
+heatmap(HellaCorrelateSp2)
+png(file="HellaCorrelateSp.png")
+heatmap(HellaCorrelateSp2)
+dev.off()
+write.table(HellaCorrelateSp2, file="HellaCorrelateSp.txt", row.names=FALSE, col.names=FALSE)
+
+## pearson correlation coefficient
+
+Hellacorrpe <- cor(Hella[,c(5:142)], method = "pearson")
+Hellacorrpe[is.na(Hellacorrpe)]<-0
+HellaCorrelatePe <- Hellacorrpe[c(23:138),c(2:22)]
+HellaCorrelatePe2=HellaCorrelatePe[c(1:12,90:98,105:116),]
+heatmap(HellaCorrelatePe2)
+png(file="HellaCorrelatePe.png")
+heatmap(HellaCorrelatePe2)
+dev.off()
+write.table(HellaCorrelatePe2, file="HellaCorrelatePe.txt", row.names=FALSE, col.names=FALSE)
 
 
 ## Covariance
