@@ -38,6 +38,7 @@ def parseCsvFiles(
     shift_offsets = { 3: 3, 2: 57, 1: 116 }
     product_start = 5
     product_width = 6
+    total_parts_offset = 43
         
     files = listdir(path)
     for file in files:
@@ -113,6 +114,26 @@ def parseCsvFiles(
                         total_scrap = scrap_left + scrap_right
                         
                         daily_report[shift][product_name][scrap_type] = total_scrap
+                    
+                    good_parts_row_n = shift_offset + total_parts_offset
+                    good_left_parts_col_n = product_col_n
+                    good_right_parts_col_n = product_col_n + 3
+                    
+                    good_left_col = get_column_letter(good_left_parts_col_n)
+                    good_right_col = get_column_letter(good_right_parts_col_n)
+                    
+                    good_left = sheet[good_left_col + str(good_parts_row_n)].value
+                    good_right = sheet[good_right_col + str(good_parts_row_n)].value
+                    
+                    if good_left is None or good_left == '':
+                        good_left = 0
+                    if good_right is None or good_right == '':
+                        good_right = 0
+                        
+                    good_parts = good_left + good_right
+                    daily_report[shift][product_name]['good_parts'] = good_parts
+                    
+                    print('Good parts: ' + str(good_parts))
 
                     product_n += 1
             

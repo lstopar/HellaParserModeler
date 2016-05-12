@@ -1,18 +1,18 @@
 import datetime
 from os import listdir
 from pptx_xml_parser import parseXmlFiles
-from slabi_deli_parser import parseCsvFiles
 import pickle
 import os
-from hella_parse.scrap_parser import get_scrap_types
+from hella_parse.scrap_parser import parseCsvFiles, get_scrap_types
 import csv
 from hella_parse.pptx_xml_parser import get_shift
+from _datetime import timedelta
 
 dir_name = '/mnt/raidM2T/data/Hella/scrap-data/all/'
 readings_path = dir_name + 'readings/'
 plan_path = dir_name + 'plan_dela/xml/'
 scrap_path = dir_name + 'scrap/'
-fout_name = dir_name + 'out.csv'
+fout_name = dir_name + 'Hella molding - 2016-05-11.csv'
 
 plan_to_scrap_h = {
     'nova Insignia': 'Insignia Nova - 187.552-01/02',
@@ -48,12 +48,12 @@ def parse(machine = "61282649"):
 ##               {10:31, 11:27, 12:31, 1:31})
     #########################################################################
 
-    product_plans = parseXmlFiles(showMissing=True, path=plan_path)
+    product_plans = parseXmlFiles(plan_path)
     
     print(str(product_plans))
     
     scrap_reports = None
-    scrap_fname = dir_name + 'scrap_reports-fixdates.p'
+    scrap_fname = dir_name + 'scrap_reports-fixdates-rates.p'
     if os.path.isfile(scrap_fname):
         pin = open(scrap_fname, 'rb')
         scrap_reports = pickle.load(pin)
@@ -103,7 +103,10 @@ def parse(machine = "61282649"):
         
         if header_row is None:
                 
-            header_row = ['date', 'product', 'shift', 'timestamp', 'total scrap'] + scrap_types
+            header_row = ['date', 'product', 'shift', 'timestamp', 'total parts', 'total scrap'] + scrap_types
+            header_row.append('total scrap (%)')
+            for scrap_type in scrap_types:
+                header_row.append(scrap_type + ' (%)')
                     
             for col_n in range(col_offset, n_cols):
                 h0 = rows[header_offset][col_n]
@@ -135,7 +138,12 @@ def parse(machine = "61282649"):
             reading_time = datetime.datetime.strptime(date_str + ' ' + time_str, "%d.%m.%y %H:%M:%S")
             hour = reading_time.hour
             timestamp = get_timestamp(reading_time)
-            plan_date_str = reading_time.strftime('%d.%m.%Y')
+            
+            plan_date_str = None
+            if hour < 6:
+                plan_date_str = (reading_time - timedelta(days=1)).strftime('%d.%m.%Y')
+            else:
+                plan_date_str = reading_time.strftime('%d.%m.%Y')
             
             shift_n = get_shift(reading_time)
             
@@ -143,8 +151,10 @@ def parse(machine = "61282649"):
                 print('Don\'t have a plan for date: ' + plan_date_str)
                 continue
             
+            product_plan = product_plans[plan_date_str]   
+            
             # get the correct product
-            product_plan = product_plans[plan_date_str]
+            
             possible_products = product_plan[shift_n]
             product = None
             for product_conf in possible_products:
@@ -198,13 +208,21 @@ def parse(machine = "61282649"):
                 continue
             
             scraps = scrap_report[shift_n][product_scrap]
+            good_parts = scraps['good_parts']
             total_scrap = 0
             for scrap_type in scrap_types:
                 total_scrap += scraps[scrap_type]
                 
+            total_parts = good_parts + total_scrap
+            
+            out_row.append(total_parts)
             out_row.append(total_scrap)
             for scrap_type in scrap_types:
                 out_row.append(scraps[scrap_type])
+            
+            out_row.append(float(total_scrap) / total_parts if total_parts != 0 else 0)
+            for scrap_type in scrap_types:
+                out_row.append(float(scraps[scrap_type]) / total_parts if total_parts != 0 else 0)
             
             for col_n in range(col_offset, n_cols):
                 value = rows[row_n][col_n]

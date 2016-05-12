@@ -104,10 +104,7 @@ def get_shift(tm):
     elif 14 <= hour and hour < 22:
         return 2
 
-def parseXmlFiles(
-               path="./xmlji",
-               show = False,
-               showMissing = False):
+def parseXmlFiles(path, show=True, showMissing=True):
     """Sparsa vse xml file ppt-ja na poti 'path', ki imajo ime enako
         'dan.mesec.leto.xml' in so podani z 'leta', 'meseci' in 'dnevi'."""
     
