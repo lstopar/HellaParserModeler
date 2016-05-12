@@ -4,6 +4,9 @@ from threading import Thread
 import matplotlib.pyplot as plt
 from math import exp
 from sklearn.linear_model.ridge import Ridge
+import pickle
+import os
+from sklearn.linear_model.coordinate_descent import Lasso
 
 class bcolors:
     HEADER = '\033[95m'
@@ -86,10 +89,10 @@ def extract_scraps(scraps, scrap_headers, target_group):
         
     return np.array(resp)
 
-def construct_ftr_mat(shifts, scraps, ftr_headers, scrap_headers, response_headers):
+def construct_ftr_mat(shifts, scraps, ftr_headers, scrap_headers, response_headers, target_ftrs):
     print('Constructing feature matrix ...')
     
-    n_percentiles = 5
+    n_percentiles = 6
     
     ftr_mat = []
     ftr_names = []
@@ -100,6 +103,7 @@ def construct_ftr_mat(shifts, scraps, ftr_headers, scrap_headers, response_heade
         shift_arr = np.array(shift)
         means = np.mean(shift_arr, axis=0)
         medians = np.median(shift_arr, axis=0)
+        variances = np.var(shift_arr, axis=0)
         mns = np.amin(shift_arr, axis=0)
         mxs = np.amax(shift_arr, axis=0)
         
@@ -117,26 +121,6 @@ def construct_ftr_mat(shifts, scraps, ftr_headers, scrap_headers, response_heade
             for inst_n in range(1, shift.shape[0]):
                 diff = abs(shift[inst_n, ftr_n] - shift[inst_n-1, ftr_n])
                 diff_sum += diff
-                
-#             time_sum = 0;
-#             n_peaks = 0
-#             mx_time = -1
-#             mn_time = -1
-#             for inst_n in range(1, shift.shape[0]-1):
-#                 if shift[inst_n-1, ftr_n] < shift[inst_n, ftr_n] and shift[inst_n, ftr_n] > shift[inst_n+1, ftr_n]:
-#                     # in the maximum
-#                     mx_time = inst_n
-#                     
-#                     if mn_time != -1:
-#                         time_sum += mx_time - mn_time
-#                         n_peaks += 1
-#                 if shift[inst_n-1, ftr_n] > shift[inst_n, ftr_n] and shift[inst_n, ftr_n] < shift[inst_n+1, ftr_n]:
-#                     # in the minimum
-#                     mn_time = inst_n
-#                     
-#                     if mx_time != -1:
-#                         time_sum += mn_time - mn_time
-#                         n_peaks += 1
                     
             mean_diff = diff_sum / (len(shift) - 1)
             #mean_peak_time = float(time_sum) / n_peaks if n_peaks != 0 else shift.shape[0]
@@ -147,6 +131,7 @@ def construct_ftr_mat(shifts, scraps, ftr_headers, scrap_headers, response_heade
         
     ftr_names += [name + ' (mean)' for name in ftr_headers]
     ftr_names += [name + ' (median)' for name in ftr_headers]
+    #ftr_names += [name + ' (variance)' for name in ftr_headers]
     ftr_names += [name + ' (min)' for name in ftr_headers]
     ftr_names += [name + ' (max)' for name in ftr_headers]
     
@@ -157,7 +142,21 @@ def construct_ftr_mat(shifts, scraps, ftr_headers, scrap_headers, response_heade
         ftr_names.append(name + ' (mean diff)')
         #ftr_names.append(name + ' (t between extremes)')
     
-    return np.array(ftr_mat), ftr_names
+    # filter the features
+    if target_ftrs is not None:
+        print('Filtering features ...')
+        ftr_idxs = [ftr_names.index(ftr_name) for ftr_name in target_ftrs]
+    
+        new_ftr_names = [ftr_names[idx] for idx in ftr_idxs]
+        new_ftr_mat = []
+        for inst_n in range(len(ftr_mat)):
+            row = ftr_mat[inst_n]
+            new_row = [row[idx] for idx in ftr_idxs]
+            new_ftr_mat.append(new_row)
+            
+        return np.array(new_ftr_mat), new_ftr_names
+    else:
+        return np.array(ftr_mat), ftr_names
 
 def sgn(val):
     if val > 0:
@@ -309,8 +308,7 @@ def minimize_newton(X, counts, lossfun, beta0=None, sing_eps=1e-10, _lambda=1, a
             beta += dbeta_newton
             print('loss =', new_loss, ', delta loss:', delta_loss,', norm =', change)
              
-    loss, _, _ = lossfun(X, counts, beta, _lambda)
-    print('Final loss:', loss, ', beta =', str(beta.T))
+    print('Final loss:', new_loss, ', beta =', str(beta.T))
         
     return beta
 
@@ -425,6 +423,7 @@ def eval_aggr_shifts(X, y, ignore_rows):
         y_train = np.log(y_train / (1 - y_train))
         
         model = Ridge(alpha=.2, fit_intercept=True, normalize=True)
+        #model = Lasso(alpha=.001, fit_intercept=True, normalize=True)
         model.fit(X_train, y_train)
         
         y_hat = model.predict(x_i.reshape(1, -1))[0]
@@ -440,6 +439,16 @@ def eval_aggr_shifts(X, y, ignore_rows):
     model.fit(X, y)
         
     return pred, real, model.coef_
+
+load_save_ftrs = True
+ftrs_fnm = 'features-111-lasso1.p'
+
+target_ftrs = None
+if load_save_ftrs and os.path.isfile(ftrs_fnm):
+    print('Loading feature names ...')
+    pin = open(ftrs_fnm, 'rb')
+    target_ftrs = pickle.load(pin)
+    pin.close()
 
 group1 = ['141 zagon (%)', '14 pike, pikasto (razno) (%)', '15 meglica (mat, siva površina) (%)']
 ignore1 = []#[51, 89]
@@ -463,16 +472,28 @@ fname = '/mnt/raidM2T/data/Hella/scrap-data/all/Hella molding - 2016-05-11.csv'
 shifts, scraps, ftr_headers, scrap_headers = readData(fname, 0)
 shifts, ftr_headers, scrap_headers = preprocess(shifts, ftr_headers, scrap_headers)
 
-ftr_mat, ftr_names = construct_ftr_mat(shifts, scraps, ftr_headers, scrap_headers, target_group)
+ftr_mat, ftr_names = construct_ftr_mat(shifts, scraps, ftr_headers, scrap_headers, target_group, target_ftrs)
 response = extract_scraps(scraps, scrap_headers, target_group)
 pred, real, wgts = eval_aggr_shifts(ftr_mat, response, target_ignore)
 
 print('Weights:')
 wgt_nm_pr_v = [(abs(wgts[i]), wgts[i], ftr_names[i]) for i in range(len(wgts))]
 wgt_nm_pr_v.sort()
-for _, wgt, ftr_name in wgt_nm_pr_v:
+
+target_ftrs = []
+
+for abs_wgt, wgt, ftr_name in wgt_nm_pr_v:
     print_str = '{0:20}: {1}'.format(ftr_name, wgt);
     print(print_str)
+    
+    if abs_wgt > 0:
+        target_ftrs.append(ftr_name)
+      
+if load_save_ftrs:  
+    pout = open(ftrs_fnm, 'wb')
+    pickle.dump(target_ftrs, pout)
+    pout.flush()
+    pout.close()
     
 
 
@@ -487,8 +508,42 @@ print('MAE: ' + str(mae))
 print('relative MAE: ' + str(mae / (sum(real) / len(real))))
 
 
-plt.plot(real, 'g')
-plt.plot(pred, 'r')
+plt_real = plt.plot(real, 'g')
+plt_pred = plt.plot(pred, 'r')
 plt.xlabel('Shift [#]')
-plt.xlabel('Scrap [%]')
+plt.ylabel('Scrap [%]')
+plt.legend(['Real scrap', 'Predicted scrap'])
 plt.show()
+
+
+'''
+Final loss: 0.607123362368 , beta = [[ -1.31050729e-05  -6.69868835e-06   3.13083874e-06   6.57838692e-04
+    4.00332616e-04  -2.15876780e-03  -2.12459459e-03   6.10048827e-04
+    7.12873600e-06   2.31069502e-05   9.28717060e-05   4.07050023e-05
+    6.79263593e-05   8.06342537e-05   7.02344623e-05   5.13456788e-16
+   -1.16568568e-15   3.33053052e-16  -2.01243393e-05   1.33221221e-15
+    1.55424758e-15   1.99831831e-15   6.10597262e-16  -8.88141472e-16
+    1.11017684e-16  -3.46476673e-05   0.00000000e+00  -4.30193525e-16
+   -1.13793126e-15   8.51896517e-05   9.28890731e-06   4.44070736e-16
+    1.01303637e-15  -6.66106104e-16  -3.33053052e-16   4.44070736e-16
+   -1.55424758e-15  -2.66442441e-15   5.80902772e-05   8.88141472e-16
+   -4.44070736e-16  -1.97056389e-15  -3.33053052e-15  -4.44070736e-16
+    4.44070736e-16  -1.51517101e-04   1.99831831e-15  -1.33221221e-15
+    2.22035368e-16  -2.22035368e-16   4.44070736e-16  -6.66106104e-16
+    2.22035368e-16   2.58246214e-16   1.11017684e-15  -6.66106104e-16
+    2.22035368e-16  -6.93860525e-16   7.57294829e-05  -2.03780103e-05
+    0.00000000e+00   1.33221221e-15   9.26227912e-06   5.55088420e-16
+   -1.33221221e-15   8.08099636e-06  -3.33053052e-16  -2.22035368e-16
+    9.99159155e-16   7.77123788e-16   5.17881987e-05   8.26062450e-09
+    2.48578708e-08   8.68581428e-08   9.53912645e-09  -1.01835493e-05
+    3.43435276e-09   1.69093847e-07   7.62095737e-11   6.93640146e-08
+    3.97124782e-06   2.12356144e-07   5.44980382e-06   5.47617186e-06
+    5.48397333e-06   5.62190886e-06   5.06172261e-06   4.80716383e-06
+    3.98779390e-04   5.86711513e-06   5.04933089e-06   5.02065844e-06
+    5.86676456e-06   5.89653676e-06   5.60456959e-06   7.52587044e-05
+    2.68702764e-05   7.34195957e-04   1.33221221e-15   9.99159155e-16
+   -2.33137136e-15  -9.99159155e-16  -7.21614946e-16   1.42887642e-06
+   -4.79858929e-07   1.06626155e-03   5.67862932e-06  -4.31388227e-07
+    1.09046224e-06   1.27829427e-06   1.09048882e-06   1.05120207e-06
+   -4.73300687e-07  -3.37899992e-04   3.41768011e-06   4.23912920e+00]]
+'''
