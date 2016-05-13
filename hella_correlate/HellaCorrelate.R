@@ -5,7 +5,7 @@
 
 ## pearson (default) correlation coefficient
 
-Hella <- read.csv("Hella-molding-V2.csv", na.strings="0")
+Hella <- read.csv("Hella-molding-V3.csv", na.strings="0")
 View(Hella)
 Hella[is.na(Hella)]<-0
 Hellacorrmat <- cor(Hella[,c(5:142)])
