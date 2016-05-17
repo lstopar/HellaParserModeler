@@ -6,7 +6,7 @@ import pickle
 import os
 from sklearn.linear_model.coordinate_descent import Lasso
 from hella_model.io import group_all, ignore_all, readData, preprocess,\
-    extract_scraps
+    extract_scraps, n_percentiles
 
 def construct_ftr_mat(shifts, scraps, ftr_headers, scrap_headers, response_headers, target_ftrs):
     print('Constructing feature matrix ...')

@@ -251,7 +251,6 @@ def ftr_engineer(X_train, X_test, ftr_headers, target_ftrs):
         for conf in confs:
             print('\t' + conf)
             
-            trans_shift = []
             if not has_percentiles and conf.endswith('percentile)'):
                 has_percentiles = True
                 
@@ -272,40 +271,34 @@ def ftr_engineer(X_train, X_test, ftr_headers, target_ftrs):
                     perc_val = np.percentile(vals, p)
                     perc_arr.append(perc_val)
                     
-                for shift in X_train:
-                    for inst_n, row in shift:
+                for shift_n, shift in enumerate(X_train):
+                    for inst_n, row in enumerate(shift):
                         val = row[ftr_n]
-                        
-                
-                perc_val = np.percentile(vals, p)
-                #print('perc: ' + str(perc_val))
-                for shift in X_train:
-                    trans_row = []
-                    for row in shift:
-                        val = row[ftr_n]
-                        if p < .5:
-                            trans_row.append(1 if val < perc_val else 0)
-                        else:
-                            trans_row.append(1 if val > perc_val else 0)
-                    trans_shift.append(trans_row)
+                        perc_n = 0
+                        ftr_v = [0]*(len(perc_arr)+1)
+                        while perc_n < len(perc_arr) and val < perc_arr[perc_n]:
+                            perc_n += 1
+                        ftr_v[perc_n] = 1
+                        for ftr_val in ftr_v:
+                            new_shifts[shift_n][inst_n].append(ftr_val)
                     
                 # update the training shift
                 for row_n, row in enumerate(X_test):
                     val = row[ftr_n]
-                    if p < .5:
-                        new_test[row_n].append(1 if val < perc_val else 0)
-                    else:
-                        new_test[row_n].append(1 if val > perc_val else 0)
+                    ftr_v = [0]*(len(perc_arr)+1)
+                    while perc_n < len(perc_arr) and val < perc_arr[perc_n]:
+                        perc_n += 1
+                    ftr_v[perc_n] = 1
+                    for ftr_val in ftr_v:
+                        new_test[row_n].append(ftr_val)
                         
             elif conf.endswith('(mean diff)'):
                 new_headers.append(ftr_name + ' (mean diff)')
-                for shift in X_train:
-                    trans_row = []
+                for shift_n, shift in enumerate(X_train):
                     for inst_n in range(len(shift)):
                         diffs = [abs(shift[i][ftr_n] - shift[i-1][ftr_n]) for i in range(max(0, inst_n - window_size), inst_n+1)]
                         mean_diff = sum(diffs) / len(diffs) if len(diffs) > 0 else 0
-                        trans_row.append(mean_diff)
-                    trans_shift.append(trans_row)
+                        new_shifts[shift_n][inst_n].append(mean_diff)
                     
                 # update the training shift
                 for row_n, row in enumerate(X_test):
@@ -315,13 +308,11 @@ def ftr_engineer(X_train, X_test, ftr_headers, target_ftrs):
                     
             elif conf.endswith('(mean)'):
                 new_headers.append(ftr_name + ' (mean)')
-                for shift in X_train:
-                    trans_row = []
+                for shift_n, shift in enumerate(X_train):
                     for inst_n in range(len(shift)):
                         vals = [shift[i][ftr_n] for i in range(max(0, inst_n - window_size), inst_n+1)]
                         mean = sum(vals) / len(vals) if len(vals) > 0 else 0
-                        trans_row.append(mean)
-                    trans_shift.append(trans_row)
+                        new_shifts[shift_n][inst_n].append(mean)
                 
                 # update the training shift
                 for row_n, row in enumerate(X_test):
@@ -331,13 +322,11 @@ def ftr_engineer(X_train, X_test, ftr_headers, target_ftrs):
                     
             elif conf.endswith('(median)'):
                 new_headers.append(ftr_name + ' (median)')
-                for shift in X_train:
-                    trans_row = []
+                for shift_n, shift in enumerate(X_train):
                     for inst_n in range(len(shift)):
                         vals = [shift[i][ftr_n] for i in range(max(0, inst_n - window_size), inst_n+1)]
                         median = np.median(vals) if len(vals) > 0 else 0
-                        trans_row.append(median)
-                    trans_shift.append(trans_row)
+                        new_shifts[shift_n][inst_n].append(median)
                 
                 # update the training shift
                 for row_n, row in enumerate(X_test):
@@ -347,12 +336,10 @@ def ftr_engineer(X_train, X_test, ftr_headers, target_ftrs):
                 
             elif conf.endswith('(max)'):
                 new_headers.append(ftr_name + ' (max)')
-                for shift in X_train:
-                    trans_row = []
+                for shift_n, shift in enumerate(X_train):
                     for inst_n in range(len(shift)):
                         vals = [shift[i][ftr_n] for i in range(max(0, inst_n - window_size), inst_n+1)]
-                        trans_row.append(np.max(vals) if len(vals) > 0 else 0)
-                    trans_shift.append(trans_row)
+                        new_shifts[shift_n][inst_n].append(np.max(vals) if len(vals) > 0 else 0)
                     
                 # update the training shift
                 for row_n, row in enumerate(X_test):
@@ -361,12 +348,10 @@ def ftr_engineer(X_train, X_test, ftr_headers, target_ftrs):
                     
             elif conf.endswith('(min)'):
                 new_headers.append(ftr_name + ' (min)')
-                for shift in X_train:
-                    trans_row = []
+                for shift_n, shift in enumerate(X_train):
                     for inst_n in range(len(shift)):
                         vals = [shift[i][ftr_n] for i in range(max(0, inst_n - window_size), inst_n+1)]
-                        trans_row.append(np.min(vals) if len(vals) > 0 else 0)
-                    trans_shift.append(trans_row)
+                        new_shifts[shift_n][inst_n].append(np.min(vals) if len(vals) > 0 else 0)
                     
                 # update the training shift
                 for row_n, row in enumerate(X_test):
@@ -375,10 +360,6 @@ def ftr_engineer(X_train, X_test, ftr_headers, target_ftrs):
             else:
                 print('Unknown conf: ' + conf)
                 exit()
-                        
-            for shift_n in range(len(X_train)):
-                for inst_n in range(len(X_train[shift_n])):
-                    new_shifts[shift_n][inst_n].append(trans_shift[shift_n][inst_n])
                 
     new_headers.append('intercept')
     for i in range(len(new_shifts)):
@@ -387,6 +368,9 @@ def ftr_engineer(X_train, X_test, ftr_headers, target_ftrs):
             row = shift[j]
             row.append(1)
         new_shifts[i] = np.matrix(new_shifts[i])
+        print('=================================================')
+        print(str(new_shifts[i]))
+        print('=================================================')
         
     for row_n, row in enumerate(X_test):
         new_test[row_n].append(1)
@@ -521,8 +505,8 @@ for i in range(len(target_group)):
  
 response = extract_scraps(scraps, scrap_headers, target_group)
 
-real, pred, beta, headers = model_and_eval(shifts, response, ftr_headers, thread_count=10)
-#real, pred = model_and_eval(shifts, response, ftr_headers, thread_count=1)
+#real, pred, beta, headers = model_and_eval(shifts, response, ftr_headers, thread_count=10)
+real, pred, beta, headers = model_and_eval(shifts, response, ftr_headers, thread_count=1)
 
 wgt_nm_pr_v = [(abs(beta[i,0]), headers[i], beta[i,0]) for i in range(len(headers))]
 wgt_nm_pr_v.sort()
